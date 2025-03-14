@@ -1,0 +1,8 @@
+nome:str = input("Digite seu nome:")
+idade:int = input("Digite sua idade:")
+altura:float = input("Digite sua altura:")
+cidade:str = input("Digite sua cidade:")
+print ("Meu nome é " + nome)
+print ("Minha idade é " + idade)
+print ("Minha altura " + altura)
+print ("Minha cidade é " + cidade)
