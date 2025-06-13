@@ -1,5 +1,4 @@
 from conexao import conecta_db
-from menu import menu_resunido
 
 def opcoes_menu():
     print (" |-------------------------------------------|")
@@ -13,7 +12,14 @@ def opcoes_menu():
     print (" |       6  -  Sair                          |")
     print (" |-------------------------------------------|")
 
-def menu_cliente(titulo):
+def menu_cliente_resunido():
+    print (" |----------------------------------------------------------------------------------------|")
+    print (" |                                   Cadastro de Cliente                                  |")
+    print (" |----------------------------------------------------------------------------------------|")
+    print (" ||1 - Listar | 2 - Consultar por ID | 3 - Inserir | 4 - Alterar | 5 - Deletar | 6 - Sair |")
+    print (" |----------------------------------------------------------------------------------------|")
+
+def menu_cliente():
     opcoes_menu()
 
     while True: 
@@ -23,32 +29,33 @@ def menu_cliente(titulo):
 
         if opcao == "1":
             listar_clientes(conexao)
-            menu_resunido(titulo)
+            menu_cliente_resunido()
 
         elif opcao == "2":
             listar_clientes(conexao)
             consultar_cliente_por_id(conexao)
-            menu_resunido(titulo)
+            menu_cliente_resunido()
 
         elif opcao == "3":
             inserir_cliente(conexao)
             listar_clientes(conexao)
-            menu_resunido(titulo)
+            menu_cliente_resunido()
 
         elif opcao == "4":
             listar_clientes(conexao)
             atualizar_cliente(conexao)
             listar_clientes(conexao)
-            menu_resunido(titulo)
+            menu_cliente_resunido()
 
         elif opcao == "5":
             listar_clientes(conexao)
             delete_cliente(conexao)
             listar_clientes(conexao)
-            menu_resunido(titulo)
+            menu_cliente_resunido()
 
         elif opcao == "6":
             print("Sair")
+
             break
 
         else:
@@ -74,10 +81,8 @@ def consultar_cliente_por_id(conexao):
     if registro is None:
         print("Cliente não encontrado:")
     else:
-        print("---------------------------")
-        print(f"| ID ..: {registro[0]} |")
-        print(f"| Nome : {registro[1]} |")
-        print("---------------------------")
+        print(f"| ID ..: {registro[0]} ")
+        print(f"| Nome : {registro[1]} ")
 
 def inserir_cliente(conexao):
     print("Inserindo o Cliente ..: ")
