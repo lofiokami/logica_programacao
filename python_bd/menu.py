@@ -1,6 +1,6 @@
-def menu_resunido(titulo):
+def menu_resumido(titulo):
     print (" |----------------------------------------------------------------------------------------|")
-    print (f" |                                   Cadastro de {titulo}                                |")
+    print (f"|                                   Cadastro de {titulo}                                 |")
     print (" |----------------------------------------------------------------------------------------|")
     print (" ||1 - Listar | 2 - Consultar por ID | 3 - Inserir | 4 - Alterar | 5 - Deletar | 6 - Sair |")
     print (" |----------------------------------------------------------------------------------------|")
